@@ -14,7 +14,7 @@ main {
 }
 .screen_1 {
     /* background-color: aquamarine; */ /*отладочная заливка */
-    background-image: url(/images/background.jpg);
+    background-image: url( images/background.jpg);
     background-position: center;
 }
 /* .screen_2 { 
