@@ -1,0 +1,147 @@
+
+.our_bikes, .goodbye {
+    background-color: cadetblue;
+    width: 100%;
+    height: 100px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.goodbye {
+    margin-bottom: 30px;
+}
+.gallery /*background block for pic_bikes*/
+{
+    background-color: cadetblue;
+    width: 100%;
+    height: 33vw;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+    overflow: visible;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+.pic_bike /* pic_bikes blocks properties */
+{
+    display: flex;
+    width: 32%;
+    height: 49%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid white;
+    border-radius: 10px;
+
+}
+.pic_bike:nth-of-type(1) /* pic_bike block properties of every pic_bike */
+{
+    background-image: url(../images/gallery/pic_bike_1.jpg);
+}
+.pic_bike:nth-of-type(2)
+{
+    background-image: url(../images/gallery/pic_bike_2.jpg);
+}
+.pic_bike:nth-of-type(3)
+{
+    background-image: url(../images/gallery/pic_bike_3.jpg);
+}
+.pic_bike:nth-of-type(4)
+{
+    background-image: url(../images/gallery/pic_bike_4.jpg)
+}
+.pic_bike:nth-of-type(5)
+{
+    background-image: url(../images/gallery/pic_bike_5.jpg)
+}
+.pic_bike:nth-of-type(6)
+{
+    background-image: url(../images/gallery/pic_bike_6.jpg)
+}
+.text_bike  /* frame for drop-article */
+{
+    display: flex;
+    height: 49%;
+    width: 32%;
+    /*background-color: aqua; *//* debugging background fill */
+    position: absolute;
+    opacity: 0;
+    font-size: 2em;
+    color: white;
+    text-indent: 15px;
+
+    justify-content: center;
+    align-items: center;
+}
+.text_bike:hover
+{
+    height: 100%;
+    width: 100%;
+    border: 2px double white;
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 0.8;
+    background-color: rgb(95, 97, 97);
+    transition: 0.9s;
+}
+#art_1  /* article about 1st pic_bike */
+{
+   top: -2px;
+    left: -3px;
+}
+#art_2 /* article about 2nd pic_bike */
+{
+    /*background-color: red;*/ /* debugging background fill */
+    left: 32%;
+    top: -1px
+}
+#art_2:hover
+{
+    left: 0;
+}
+#art_3 /* article about 3rd pic_bike */
+{
+    /*background-color: green;*/ /* debugging background fill */
+    left: 600px;
+    top: -1px
+}
+#art_3:hover
+{
+    left: 0;
+}
+#art_4 /* article about 4th pic_bike */
+{
+    /*background-color: yellow;*/ /* debugging background fill */
+    top: 250px;
+    right: 65%;
+}
+#art_4:hover
+{
+    top: 0;
+    right: 0%;
+}
+#art_5 /* article about 5th pic_bike */
+{
+    /*background-color: brown; *//* debugging background fill */
+    top: 250px;
+
+}
+#art_5:hover
+{
+    top: 0;
+}
+#art_6 /* article about 6th pic_bike */
+{
+    /*background-color: saddlebrown;*/ /* debugging background fill */
+    top: 250px;
+    left: 600px;
+}
+#art_6:hover
+{
+    top: 0;
+    left: 0;
+}

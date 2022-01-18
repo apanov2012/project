@@ -1,0 +1,184 @@
+/* свойства CSS для всех блоков и анимация для слайдера*/
+
+.slider { /* блок со слайдером */
+    /* background-color: seagreen; */ /*отладочная заливка*/
+    width: 100%;
+    height: 41vw;
+    max-height: 700px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-right: 20px;
+    right: 5px;
+    z-index: 0;
+    border: double 4px white;
+    border-radius: 15px;
+}
+input { /*сокрытие радиокнопок*/
+    display: none;
+}
+#display { /* ограничитель видимой области */
+    /* background-color: rgb(7, 56, 40); */ /*отладочная заливка*/
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+}
+#picture { /*ультраширокий блок с фотографиями внутри */
+    display: flex;
+    height: 100%;
+    max-height: 700px;
+    width: 500%;
+    max-width: 5000px;
+    z-index: inherit;
+}
+.pic_slider { /*блок для фото*/
+    /* border: 1px solid black; */ /*отладочная рамка*/
+    height: 100%;
+    width: 20%;
+    max-height: 700px;
+    max-width: 1000px;
+    display: flex;
+    background-size: cover;
+    z-index: -2;
+}
+.pic_slider:nth-of-type(1) { /* привязка фото в качестве фона блока */
+    background-image: url(../images/slider/pic_1.jpg);
+}
+.pic_slider:nth-of-type(2) {
+    background-image: url(../images/slider/pic_2.jpg);
+}
+.pic_slider:nth-of-type(3) {
+    background-image: url(../images/slider/pic_3.jpg);
+}
+.pic_slider:nth-of-type(4) {
+    background-image: url(../images/slider/pic_4.jpg);
+}
+.pic_slider:nth-of-type(5) {
+    background-image: url(../images/slider/pic_5.jpg);
+}
+
+
+/* задание взаимодействия радиокнопок со сдвигом ульраширокого блока для фото */
+#move_1:checked~ #display #picture {
+    margin-left: 0;
+    transition: 1.2s;
+}
+#move_2:checked~ #display #picture {
+    margin-left: -100%;
+    transition: 1.2s;
+}
+#move_3:checked~ #display #picture {
+    margin-left: -200%;
+    transition: 1.2s;
+}
+#move_4:checked~ #display #picture {
+    margin-left: -300%;
+    transition: 1.2s;
+}
+#move_5:checked~ #display #picture {
+    margin-left: -400%;
+    transition: 1.2s;
+}
+
+
+.right_arrow { /*фоновый блок для управляющих радиокнопками блоков справа*/
+    height: 80px;
+    width: 80px;
+    /* background-color: brown; */ /*отладочная заливка*/
+    background-size: cover;
+    /* border: 1px solid black; */ /*отладочная рамка*/
+    overflow: visible;
+    top: 50%;
+    right: 3%;
+    position: absolute;
+    
+}
+.right, .left { /*отдельные блоки, привязанные к радиокнопкам для право и левой прокрутки */
+    height: 80px;
+    width: 80px;
+    /* border: 1px solid black; */ /*отладочная рамка*/
+    position: absolute;
+    background-image: url(../images/right_arrow.png); /*изображение стрелки в .png */
+    background-size: cover;
+    visibility: hidden;
+}
+.right:focus, .left:focus { /*создание эффекта нажатия при клике */
+    animation-name: click;
+    animation-duration: 0.5s;
+}
+.right:hover, .left:hover { /*визуализация наведения на стрелки */
+    opacity: 0.6;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+}
+@keyframes click /*анимация нажатия для стрелок*/
+{
+    0%
+    {
+        opacity: 0.6;
+        height: 100px;
+        width: 100px;
+    }
+    50%
+    {
+        opacity: 1;
+        height: 120px;
+        width: 120px;
+    }
+    100%
+    {
+        opacity: 0.6;
+        height: 100px;
+        width: 100px;
+    }
+}
+/*каждый из управляющих блоков неактивен,пока не будет включена радиокнопка до или после него
+алгоритм прокрутки вправо*/
+#move_1:checked~ .right_arrow .right:nth-of-type(2) {
+    visibility: visible;
+}
+#move_2:checked~ .right_arrow .right:nth-of-type(3) {
+    visibility: visible;
+}
+#move_3:checked~ .right_arrow .right:nth-of-type(4) {
+    visibility: visible;
+}
+#move_4:checked~ .right_arrow .right:nth-of-type(5) {
+    visibility: visible;
+}
+#move_5:checked~ .right_arrow .right:nth-of-type(1) {
+    visibility: visible;
+}
+
+
+
+.left {
+    background-image: url(../images/left_arrow.png);
+}
+.left_arrow { /*фоновый блок для управляющих радиокнопками блоков слева*/
+    height: 80px;
+    width: 80px;
+    /* background-color: rgb(88, 34, 214); */ /*отладочная заливка*/
+    top: 50%;
+    left: 3%;
+    overflow: visible;
+    position: absolute;
+}
+/*алгоритм прокрутки влеаво*/
+#move_1:checked~ .left_arrow .left:nth-of-type(5) {
+    visibility: visible;
+}
+#move_2:checked~ .left_arrow .left:nth-of-type(1) {
+    visibility: visible;
+}
+#move_3:checked~ .left_arrow .left:nth-of-type(2) {
+    visibility: visible;
+}
+#move_4:checked~ .left_arrow .left:nth-of-type(3) {
+    visibility: visible;
+}
+#move_5:checked~ .left_arrow .left:nth-of-type(4) {
+    visibility: visible;
+}

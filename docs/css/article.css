@@ -1,0 +1,132 @@
+/* свойства CSS для основного контента страницы */
+
+
+.article {
+    background-color: cadetblue;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    /* text-align: center; */
+    position: relative;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+/* вступительное слово к текстовому блоку */
+.speach {
+    display: inline-block;
+    text-align: right;
+}
+.speach_img {
+    background-image: url(../images/article/clever_man.png);
+    background-size: cover;
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 8vw;
+    max-width: 109px;
+    height: 11vw;
+    max-height: 150px;
+}
+h1 {
+    text-align: center;
+    margin-left: 18vw;
+}
+h2, h3 {
+    text-align: center;
+}
+.speach_h_1 {
+    width: 20vw
+}
+.speach_h_2 {
+    margin-right: 0%;
+}
+.speach_h_3 {
+    margin-left: 30vw;
+}
+
+.welcome {
+    text-align: center;
+}
+
+p {
+    font-size: larger;
+    padding: 0 10px 0 10px;
+    text-align: left;
+}
+.indent {
+    margin-left: 30px;
+}
+.art_pic_1 {
+    background-image: url(../images/article/me.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    float: left;
+    /* height: 24vw; */
+    height: 330px;
+    /* width: 30%; */
+    width: 230px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: double 1px white;
+    border-radius: 15px;
+}
+.art_pic_2 {
+    background-image: url(../images/article/art_baical.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 45vw;
+    max-width: 630px;
+    height: 30vw;
+    max-height: 420px;
+    /* margin-left: 14%; */
+    border: double 4px white;
+    border-radius: 15px;
+}
+.art_pic_3 {
+    background-image: url(../images/article/art_baical_2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    /* width: 46.5%; */
+    width: 464px;
+    /* height: 17vw; */
+    height: 286px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: double 1px white;
+    border-radius: 15px;
+}
+.art_pic_4 {
+    background-image: url(../images/article/altay.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 44vw;
+    max-width: 690px;
+    height: 30vw;
+    max-height: 474px;
+    /* margin-left: 14%; */
+    border: double 4px white;
+    border-radius: 15px;
+}
+.art_pic_5 {
+    background-image: url(../images/article/altay_2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    /*width: 46.5%;*/
+    width: 467px;
+    /* height: 20vw; */
+    height: 351px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: double 1px white;
+    border-radius: 15px;
+}

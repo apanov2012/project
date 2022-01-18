@@ -1,0 +1,377 @@
+
+/* свойства CSS для всех элементов хэдера, медиазапросы и анимация */
+
+
+header {
+    height: 130px;
+    width: 100%;
+    /* background-color: darkorange; */ /*отладочная заливка */
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+@media (max-width: 900px)
+{
+    header
+    {
+        height: 80px;
+    }
+}
+#menubar_react {
+    display: flex;
+    /* background-color: darkred; */ /*отладочная заливка */
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.menubar_back { /*обертка для менюбара*/
+    display: flex;
+    /* background-color: darkred; */ /*отладочная заливка */
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.ghost_left, .ghost_right { /*заглушки справа и слева в менюбаре*/
+    display: flex;
+    width: 15%;
+    /* background-color: darkslategrey; */ /*отладочная заливка */
+}
+.ghost_right {
+    /* background-color: darkviolet; */ /*отладочная заливка */
+    position: relative;
+}
+.back_color { /*видимый фон для элементов мемю и лого*/
+    /* background-color: lightgreen; */ /*отладочная заливка */
+    background: linear-gradient(to top right,rgba(117, 190, 218, 1.0),rgba(117, 190, 218, 0.0) );
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.logo_back { /*фон для лого*/
+    position: relative;
+    /* background-color: deeppink; */ /*отладочная заливка */
+    display: flex;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 3vw;
+    font-family: Snell Roundhand, cursive;
+}
+.logo { /*лого. состоит из трех частей*/
+    display: flex;
+}
+.logo:nth-of-type(1) {
+    /* background-color: fuchsia; */ /*отладочная заливка */
+    font-size: 6vw;
+    position: absolute;
+    top: -1vw;
+    left: 2%;
+}
+.logo:nth-of-type(2) {
+    /* background-color: rgb(58, 47, 58); */
+    width: 60%;
+    font-size: 3vw;
+    text-align: center;
+}
+.logo:nth-of-type(3) {
+    /* background-color: rgb(105, 128, 75); */
+    font-size: 6vw;
+    margin-top: 2vw;
+}
+@media (max-width: 880px) /*алгоритм адаптивности лого*/
+{
+    .logo_back
+    {
+        margin-right: 70%;
+        transition: 0.5s;
+    }
+    .logo:nth-of-type(2)
+    {
+        width: 0%;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+    .logo:nth-of-type(1), .logo:nth-of-type(3)
+    {
+        font-weight: bold;
+        font-style: italic;
+    }
+    .logo:nth-of-type(1)
+    {
+        left: 50%;
+        transition: 0.3s;
+    }
+}
+
+
+
+.menu_back { /*общая обертка для навигационной панели*/
+    /* background-color: forestgreen; */ /*отладочная заливка */
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    max-width: 600px;
+}
+.menu_burger { /*значок меню для моб устройств*/
+    /* background-color: lightskyblue; */ /*отладочная заливка */
+    height: 0;
+    width: 10%;
+    display: flex;
+    overflow: visible;
+    position: absolute;
+}
+.menu_list { /*общая обертка для клавиш навигации*/
+    /* background-color: #b2f5f5; */ /*отладочная заливка */
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: -2vw;
+}
+.burger_line { /*"котлеты" значка меню*/
+    /* background-color: lightcoral; */ /*отладочная заливка */
+    background: linear-gradient(to top right,#14d3d3,#b2f5f5 );
+    width: 90%;
+    min-width: 70px;
+    height: 15%;
+    min-height: 12px;
+    position: absolute;
+    left: 5%;
+    border-radius: 10px;
+    overflow: hidden;
+    visibility: hidden;
+}
+.burger_line .flare /*элемент "котлеты" , на который "повешена" анимация блика*/
+{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    transform: skewX(-45deg);
+    animation: flareAnimation;
+    left: -10%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: flareAnimation 3s infinite linear;
+}
+.burger_line:nth-of-type(1) {
+    top: 20%;
+}
+.burger_line:nth-of-type(2) {
+    top: 40%;
+}
+.burger_line:nth-of-type(3) {
+    top: 60%;
+}
+.button { /* основные кнопки меню*/
+    /* background-color: maroon; */ /*отладочная заливка */
+    background: linear-gradient(to top right,#14d3d3,#b2f5f5 );
+    width: 10vw;
+    height: 4vw;
+    max-height: 44px;
+    max-width: 110px;
+    display: flex;
+    position: absolute;
+    top: 60px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.button:hover {
+    border: 2px solid white; /*выделение при наведении */
+}
+.button:nth-of-type(1) {
+    left: -32vw;
+}
+.button:nth-of-type(2) {
+    left: -21vw;
+}
+.button:nth-of-type(3) {
+    left: -10vw;
+}
+.button:nth-of-type(4) {
+    left: 1vw;
+}
+.but_drop_list { /*выпадающий список меню */
+    /* background-color: orangered; */ /*отладочная заливка */
+    position: absolute;
+    top: 0vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 0;
+    width: 10vw;
+    height: 4vw;
+    opacity: 1;
+    overflow: hidden;
+}
+.but_drop_list:hover { 
+    height: auto;
+}
+.hidden { /*кнопка-"заглушка" для выпадающего списка меню*/
+    opacity: 0;
+    margin-top: 0;
+}
+.menu_but { /* дополнительные кнопки выпадающего меню*/
+    /* background-color: blue; */ /*отладочная заливка */
+    background: linear-gradient(to top right,#14d3d3,#b2f5f5 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vw;
+    width: 10vw;
+    margin-top: 5px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 10px;
+}
+.menu_but:hover {  /*выделение при наведении */
+    border: 1px solid white;
+}
+@media (max-width: 480px) /*адаптация размера шрифта основных и дополнительных кнопок меню под моб устройства */
+{
+    .button, .menu_but
+    {
+        font-size: 10px;
+    }
+}
+@media (max-width: 900px) /* точка исчезновения/появления значка меню, изменения лого,перемещения кнопок */
+{
+    .menu_burger
+    {
+        right: 2vw;
+        height: 100%;
+        overflow: hidden;
+    }
+    .menu_burger:focus /* при значении focus не работают ссылки*/
+    {
+        overflow: visible;
+    }
+    .burger_line
+    {
+        visibility: visible;
+    }
+    .button
+    {
+        width: 17vw;
+        height: 7vw;
+    }
+    .button:nth-of-type(1)
+    {
+        left: -10vw;
+        top: 11vw;
+    }
+    .button:nth-of-type(2)
+    {
+        left: -10vw;
+        top: 19vw;
+    }
+    .button:nth-of-type(3)
+    {
+        left: -10vw;
+        top: 27vw;
+    }
+    .button:nth-of-type(4)
+    {
+        left: -10vw;
+        top: 35vw;
+    }
+    .but_drop_list
+    {
+        left: 0vw;
+        top: -2vw;
+        width: 17vw;
+        height: 7vw;
+        padding-left: 0;
+        overflow: hidden;
+        flex-direction: row;
+        overflow: hidden;
+    }
+    .but_drop_list:hover
+    {
+        height: auto;
+        width: 33vw;
+        left: -18vw;
+        top: -8vw;
+        overflow: visible;
+    }
+    .hidden
+    {
+        opacity: 0;
+        width: 17vw;
+    }
+    .menu_but
+    {
+        height: 7vw;
+        width: 17vw;
+        animation-name: side_menu;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+
+    }
+}
+@media (min-width: 1200px) /*адаптация лого под увеличение разрешения */
+{
+    .logo_back
+    {
+        left: -150px;
+    }
+    .logo:nth-of-type(1)
+    {
+        font-size: 5vw;
+    }
+    .logo:nth-of-type(2)
+    {
+        font-size: 3vw;
+    }
+    .logo:nth-of-type(3)
+    {
+        font-size: 5vw;
+    }
+}
+@media (min-width: 1600px)
+{
+    .logo:nth-of-type(2)
+    {
+        width: 0%;
+        overflow: hidden;
+    }
+    .logo:nth-of-type(3)
+    {
+        position: absolute;
+        left: 48px;
+    }
+}
+@keyframes side_menu /*анимация для всплывающих доп кнопок меню для моб устройств */
+{
+    0%
+    {
+        opacity: 0;
+    }
+    30%
+    {
+        opacity: 0;
+    }
+    40%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+@keyframes flareAnimation /*анимация блика для значка меню */
+{
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 110%;
+    }
+}
